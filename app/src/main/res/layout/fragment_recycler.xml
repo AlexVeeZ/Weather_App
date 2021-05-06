@@ -3,18 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_container"
+    android:id="@+id/recycler_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_5">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_fragment"
-        android:layout_width="wrap_content"
+        android:id="@+id/text_fragment_recycler"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/text_size_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/temperature_value_text_size"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/test_class" />
 
