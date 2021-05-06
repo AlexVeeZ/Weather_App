@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Weather App</string>
+    <string name="app_name">my_weather_app</string>
+    <string name="test_class">data class</string>
+    <string name="text_enter">введите текст</string>
+    <string name="temperature_label">Температура</string>
+    <string name="feels_like_label">Ощущается как</string>
+    <string name="city_coordinates">lt/ln: %s, %s"</string>
 </resources>
