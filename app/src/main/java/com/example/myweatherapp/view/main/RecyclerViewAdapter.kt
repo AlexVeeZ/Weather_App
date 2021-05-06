@@ -9,8 +9,8 @@ import com.example.myweatherapp.R
 import com.example.myweatherapp.model.Weather
 
 class RecyclerViewAdapter(private var onItemViewClickListener:
-                          MainFragment.OnItemViewClickListener?)
-    : RecyclerView.Adapter<RecyclerViewAdapter.MainViewHolder>() {
+                          MainFragment.OnItemViewClickListener?) :
+    RecyclerView.Adapter<RecyclerViewAdapter.MainViewHolder>() {
 
     private var weatherData: List<Weather> = listOf()
 
@@ -23,10 +23,13 @@ class RecyclerViewAdapter(private var onItemViewClickListener:
         onItemViewClickListener = null
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MainViewHolder {
         return MainViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.recycler_fragment, parent, false) as View
+                .inflate(R.layout.fragment_recycler, parent, false) as View
         )
     }
 
@@ -41,10 +44,12 @@ class RecyclerViewAdapter(private var onItemViewClickListener:
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(weather: Weather) {
-            itemView.findViewById<TextView>(R.id.text_fragment).text =
-                weather.city.city
-            itemView.setOnClickListener {
-                onItemViewClickListener?.onItemViewClick(weather)
+            itemView.apply {
+                findViewById<TextView>(R.id.text_fragment_recycler).text =
+                    weather.city.city
+                setOnClickListener {
+                    onItemViewClickListener?.onItemViewClick(weather)
+                }
             }
         }
     }
