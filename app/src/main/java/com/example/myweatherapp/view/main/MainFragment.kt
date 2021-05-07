@@ -82,8 +82,10 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 binding.mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar.make(binding.mainFragmentFAB, "Error",
-                    Snackbar.LENGTH_INDEFINITE)
+                Snackbar.make(
+                    binding.mainFragmentFAB, "Error",
+                    Snackbar.LENGTH_INDEFINITE
+                )
                     .setAction("Reload") {
                         viewModel.getWeatherFromLocalSourceRus()
                     }
