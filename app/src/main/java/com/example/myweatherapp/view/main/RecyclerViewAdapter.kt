@@ -7,9 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myweatherapp.R
 import com.example.myweatherapp.model.Weather
+import com.example.myweatherapp.view.main.MainFragment.OnItemViewClickListener
 
-class RecyclerViewAdapter(private var onItemViewClickListener:
-                          MainFragment.OnItemViewClickListener?) :
+class RecyclerViewAdapter(
+    private var onItemViewClickListener:
+    OnItemViewClickListener?
+) :
     RecyclerView.Adapter<RecyclerViewAdapter.MainViewHolder>() {
 
     private var weatherData: List<Weather> = listOf()
