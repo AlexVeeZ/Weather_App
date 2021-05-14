@@ -1,8 +1,25 @@
 <resources>
-    <string name="app_name">my_weather_app</string>
+    <string name="app_name">geekbrains_my_app_weather</string>
     <string name="test_class">data class</string>
     <string name="text_enter">введите текст</string>
     <string name="temperature_label">Температура</string>
     <string name="feels_like_label">Ощущается как</string>
     <string name="city_coordinates">lt/ln: %s, %s"</string>
+    <string name="error">Error</string>
+    <string name="reload">Reload</string>
+    <string name="threads">Threads</string>
+    <string name="in_main_thread">В главном потоке</string>
+    <string name="from_thread">Из потока %d</string>
+    <string name="in_thread">Выводим в потоке %s</string>
+    <string name="calculate_in_thread">Считаем в потоке %s</string>
+    <string name="my_handler_thread">My_Handler_Thread</string>
+    <string name="hello_from_thread_fragment">Hello from ThreadsFragment</string>
+    <string name="calculate">Расчет</string>
+    <string name="default_number">1</string>
+    <string name="calc_in_thread">Расчет в потоке</string>
+    <string name="handler_thread">Handler_Thread</string>
+    <string name="service">Service</string>
+    <string name="service_broadcast">Service + Broadcast</string>
+    <string name="token">86fe6ceb-b604-4b94-be1b-8579f65b884c</string>
+
 </resources>

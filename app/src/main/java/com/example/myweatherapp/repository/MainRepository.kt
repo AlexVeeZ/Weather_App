@@ -1,6 +1,8 @@
-package com.example.myweatherapp.model
+package com.example.myweatherapp.repository
 
-interface Repository {
+import com.example.myweatherapp.model.Weather
+
+interface MainRepository {
     fun getWeatherFromServer(): Weather
     fun getWeatherFromLocalStorageRus(): List<Weather>
     fun getWeatherFromLocalStorageWorld(): List<Weather>
