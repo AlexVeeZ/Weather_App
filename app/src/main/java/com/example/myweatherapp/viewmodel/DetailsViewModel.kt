@@ -48,7 +48,7 @@ class DetailsViewModel(
 
         private fun checkResponse(serverResponse: WeatherDTO): AppState {
             val fact = serverResponse.fact
-            return if (fact == null || fact.temp == null || fact.feels_like == null ||
+            return if (fact == null || fact.temp == null || fact.feelslike == null ||
                 fact.condition.isNullOrEmpty()) {
                 AppState.Error(Throwable(CORRUPTED_DATA))
             } else {
