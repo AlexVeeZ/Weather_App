@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.example.myweatherapp.R
 import com.example.myweatherapp.databinding.FragmentMainBinding
 import com.example.myweatherapp.model.Weather
+import com.example.myweatherapp.utils.showSnackBar
 import com.example.myweatherapp.view.details.WeatherFragment
 import com.example.myweatherapp.viewmodel.AppState
 import com.example.myweatherapp.viewmodel.MainViewModel
@@ -19,7 +20,8 @@ class MainFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this).get(MainViewModel::class.java) }
     private var isDataSetRus: Boolean = true
 
     private val adapter =
@@ -53,9 +55,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        super.onViewCreated(view, savedInstanceState)
         binding.mainFragmentRecyclerView.adapter = adapter
         binding.mainFragmentFAB.setOnClickListener { changeWeatherDataSet() }
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.getWeatherFromLocalSourceRus()
     }
@@ -82,14 +84,10 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 binding.mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar.make(
-                    binding.mainFragmentFAB, "Error",
-                    Snackbar.LENGTH_INDEFINITE
-                )
-                    .setAction("Reload") {
-                        viewModel.getWeatherFromLocalSourceRus()
-                    }
-                    .show()
+                binding.mainFragmentRootView.showSnackBar(
+                        getString(R.string.error),
+                        getString(R.string.reload),
+                        { viewModel.getWeatherFromLocalSourceRus() })
             }
         }
     }

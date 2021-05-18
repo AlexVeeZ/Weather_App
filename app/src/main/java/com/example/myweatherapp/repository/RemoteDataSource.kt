@@ -28,7 +28,7 @@ class RemoteDataSource {
         .build().create(WeatherAPI::class.java)
 
     fun getWeatherDetails(lat: Double, lon: Double, callback: Callback<WeatherDTO>) {
-        weatherApi.getWeather("86fe6ceb-b604-4b94-be1b-8579f65b884c", lat, lon).enqueue(callback)
+        weatherApi.getWeather(WEATHER_API_KEY, lat, lon).enqueue(callback)
     }
 
     private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
