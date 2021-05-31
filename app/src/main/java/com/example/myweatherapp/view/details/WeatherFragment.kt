@@ -1,6 +1,5 @@
 package com.example.myweatherapp.view.details
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,7 @@ import com.example.myweatherapp.R
 import com.example.myweatherapp.databinding.FragmentDetailsBinding
 import com.example.myweatherapp.model.Weather
 import com.example.myweatherapp.utils.showSnackBar
-import com.example.myweatherapp.viewmodel.AppState
+import com.example.myweatherapp.app.AppState
 import com.example.myweatherapp.viewmodel.DetailsViewModel
 
 

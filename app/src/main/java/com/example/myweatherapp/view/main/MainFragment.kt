@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.snackbar.Snackbar
 import com.example.myweatherapp.R
 import com.example.myweatherapp.databinding.FragmentMainBinding
 import com.example.myweatherapp.model.Weather
 import com.example.myweatherapp.utils.showSnackBar
 import com.example.myweatherapp.view.details.WeatherFragment
-import com.example.myweatherapp.viewmodel.AppState
+import com.example.myweatherapp.app.AppState
 import com.example.myweatherapp.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
