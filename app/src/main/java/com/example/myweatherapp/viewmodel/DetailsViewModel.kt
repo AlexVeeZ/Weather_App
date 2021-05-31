@@ -2,6 +2,7 @@ package com.example.myweatherapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myweatherapp.app.AppState
 import com.example.myweatherapp.repository.DetailsRepository
 import com.example.myweatherapp.repository.sendBroadcastDetailsRepositoryImpl
 import com.example.myweatherapp.model.WeatherDTO
@@ -16,8 +17,8 @@ private const val REQUEST_ERROR = "Ошибка запроса на сервер
 private const val CORRUPTED_DATA = "Неполные данные"
 
 class DetailsViewModel(
-    private val detailsLiveData: MutableLiveData<AppState> = MutableLiveData(),
-    private val detailsRepositoryImpl: DetailsRepository =
+        private val detailsLiveData: MutableLiveData<AppState> = MutableLiveData(),
+        private val detailsRepositoryImpl: DetailsRepository =
             sendBroadcastDetailsRepositoryImpl(RemoteDataSource())
 ) : ViewModel() {
 

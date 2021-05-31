@@ -1,4 +1,4 @@
-package com.example.myweatherapp.viewmodel
+package com.example.myweatherapp.app
 import com.example.myweatherapp.model.Weather
 sealed class AppState {
     data class Success(val weatherData: List<Weather>) : AppState()
